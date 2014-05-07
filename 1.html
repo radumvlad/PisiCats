@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="1.css" type="text/css">
+<script type="text/javascript" src="1.js"></script>
+
+</head>
+<body id="body" >
+<div id="firstPageDiv">
+<img src="logo.png" id="logoImg">
+<img src="play.png" id="playImg" onclick="showOptions();" onmouseover='changeText("Play")' onmouseout='changeText("")'>
+<h1 id="textDiv"></h1>
+<div id="newGameOptions" style="display:none">
+<img src="playVsComputer.png" class="options" id="vsComputer" onclick="gameVsComputer();" onmouseover='changeText("Vs Computer")' onmouseout='changeText("")'>
+<img src="playVsPlayer.png" class="options" id="vsPlayer" onclick="gameVsPlayer();" onmouseover='changeText("Vs Player")' onmouseout='changeText("")'>
+</div>
+<img src="settings.png" id="settingsImg" onclick="showSettings();" onmouseover='changeText("Settings")' onmouseout='changeText("")'>
+<img src="about.png" id="aboutImg" onclick="about();" onmouseover='changeText("About")' onmouseout='changeText("")'>
+</div>
+
+<div id="gameDiv"> 
+<p id="timer">
+</p>
+</div>
+
+<div id="aboutDiv">
+<p id="visitor"></p>
+<input type="checkbox" value="aboutMe" onchange="about1();">About Me
+<br>
+<p id="aboutMe" style="display:none" class="aboutDivs">
+I am Radu Vlad,a 20 year programmer.For more information you can contact me at radumvlad@yahoo.com.
+</p>
+<br>
+<input type="checkbox" value="aboutGame" onchange="about2();">About Game
+<br>
+<p id="aboutGame" style="display:none" class="aboutDivs">
+This is PisiCats,a game designed and created by me(click above for more info about me).The aplication is build with HTML,CSS and JavaScript.Thanks a lot to sites like freevectors.net or all-free-download.com.Design is, at it's most build with photos from there. 
+</p>
+<img src="back.png" id="backButton" onclick="back();">
+</div>
+
+<div id="clockDiv">
+asd
+</div>
+
+<div id="audioDiv">
+<audio loop id="audio">
+  <source src="sound.ogg" type="audio/ogg">
+  <source src="sound.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</div>
+
+</body>
+</html>

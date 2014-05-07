@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" href="1.css" type="text/css">
+
+
+<script>
+function onLoad()
+{
+document.getElementById("nameText").value=opener.mySettings.name;
+
+if(opener.mySettings.sound==false)
+	document.getElementsByName('sound')[1].checked=true;
+else
+	document.getElementsByName('sound')[0].checked=true;
+
+var select=document.getElementById("select");
+select.options[opener.mySettings.speed].selected=true;
+}
+
+
+
+function saveSettings()
+{
+opener.mySettings.name=document.getElementById("nameText").value;
+
+if(document.getElementsByName('sound')[1].checked)
+{
+opener.mySettings.sound=false;
+opener.mySettings.pauseSound();
+}
+else
+{
+opener.mySettings.playSound();
+opener.mySettings.sound=true;
+}
+
+opener.mySettings.speed=document.getElementById("select").selectedIndex;
+}
+
+</script>
+
+</head>
+<body id="body" onload="onLoad();">
+
+<div id="settingsDiv">
+<br>
+<br>
+<form>
+Write your name:
+<input type="text" id="nameText">
+<br>
+<br>
+Sound settings:
+<br>
+<input type="radio" name="sound" value="on">On
+<input type="radio" name="sound" value="off" >Off
+<br>
+<br>
+Select computer's speed:
+<select id="select">
+  <option value="slow">slow</option>
+  <option value="medium">medium</option>
+  <option value="fast">fast</option>
+</select> 
+<br>
+<br>
+<input type="button" value="save" onclick="saveSettings();">
+</form>
+</div>
+
+</body>
+</html>
